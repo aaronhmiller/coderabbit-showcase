@@ -26,7 +26,7 @@ After the first review, ask Codex to fix only critical and major issues. Show th
 The CodeRabbit CLI is not currently installed: the official installer returned HTTP 403 through the restricted environment network. Once network access permits `cli.coderabbit.ai`, install and authenticate before the demo:
 
 ```bash
-url -fsSL https://cli.coderabbitc.ai/install.sh | sh
+curl -fsSL https://cli.coderabbit.ai/install.sh | sh
 coderabbit auth login --agent
 coderabbit auth status --agent
 ```
