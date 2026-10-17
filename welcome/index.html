@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#17122b">
+    <meta name="description" content="A playful Halloween welcome experience.">
+    <title>Welcome to the Candy Coven</title>
+    <link rel="icon" href="./assets/halloween-welcome.webp">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <main class="welcome-shell">
+      <section class="welcome-card" aria-labelledby="welcome-title">
+        <div class="art-panel">
+          <img
+            src="./assets/halloween-welcome.webp"
+            alt="A glowing jack-o'-lantern candy bucket beneath a golden moon."
+            width="1024"
+            height="1536"
+          >
+          <div class="art-caption" aria-hidden="true">
+            <span>October 31</span>
+            <span>Moonlit treats await</span>
+          </div>
+        </div>
+
+        <div class="form-panel">
+          <div class="eyebrow"><span aria-hidden="true">✦</span> The Candy Coven</div>
+          <div id="form-view">
+            <h1 id="welcome-title">Something sweet this way comes.</h1>
+            <p class="intro">Tell us a little about yourself before you step into tonight's moonlit gathering.</p>
+
+            <form id="welcome-form" novalidate>
+              <div class="field">
+                <label for="name">What should we call you?</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  maxlength="40"
+                  placeholder="Your name"
+                  aria-describedby="name-error"
+                  required
+                >
+                <p class="error" id="name-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label for="candy">Your favorite candy</label>
+                <input
+                  id="candy"
+                  name="candy"
+                  type="text"
+                  maxlength="60"
+                  placeholder="Chocolate, gummies, candy corn…"
+                  aria-describedby="candy-hint candy-error"
+                  list="candy-suggestions"
+                  required
+                >
+                <p class="hint" id="candy-hint">No judgment here—even candy corn is welcome.</p>
+                <p class="error" id="candy-error" aria-live="polite"></p>
+                <datalist id="candy-suggestions">
+                  <option value="Chocolate">
+                  <option value="Gummy bears">
+                  <option value="Peanut butter cups">
+                  <option value="Candy corn">
+                  <option value="Caramels">
+                </datalist>
+              </div>
+
+              <button type="submit">
+                Join the gathering
+                <span aria-hidden="true">→</span>
+              </button>
+            </form>
+
+            <p class="privacy"><span aria-hidden="true">☾</span> Your answers stay in this browser.</p>
+          </div>
+
+          <section class="success" id="success-view" aria-live="polite" tabindex="-1" hidden>
+            <div class="success-icon" aria-hidden="true">✦</div>
+            <p class="eyebrow">Invitation accepted</p>
+            <h2 id="success-heading"></h2>
+            <p id="success-message"></p>
+            <button class="secondary" id="start-over" type="button">Change my answers</button>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -32,3 +32,13 @@ coderabbit auth status --agent
 ```
 
 Do not copy a host credential into a cloud session. Authenticate inside the environment that will run the review.
+
+## Halloween welcome screen
+
+The static welcome experience in [`welcome/`](welcome/) asks visitors for their name and favorite candy, then presents a personalized invitation. To preview it locally:
+
+```bash
+python3 -m http.server 8000
+```
+
+Open `http://localhost:8000/welcome/`. Run its validation tests with `node --test welcome/form-utils.test.mjs`.
